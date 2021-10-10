@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Your Game ID is:</h2>
+
+<p id="p1">Hello World!</p>
+
+<script>
+var x = Math.floor(1000 + Math.random() * 9000);
+document.getElementById("p1").innerHTML = x;
+var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+var q = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?type=game&name="+x+"&game="+x;
+fetch(q, requestOptions);
+</script>
+
+<script>
+
+function myFunction() {
+var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+  var y = document.getElementById("myText").value;
+  var x = document.getElementById("p1").innerHTML;
+  document.getElementById("demo").innerHTML = y;
+  var link = "location.href='track1.html?host&game="+x+"&name="+y+"&round=1'";
+  console.log(link);
+  document.getElementById( "a" ).setAttribute( "onClick", link );
+  var q2 = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?type=host&name="+y+"&game="+x;
+  fetch(q2, requestOptions);
+}
+</script>
+
+First Name: <input type="text" id="myText" value="Mickey">
+
+<button onclick="myFunction()">Create Game</button>
+
+<p>Host:</p>
+<p id="demo"></p>
+<br><br>
+<p>Players:</p>
+<p id="p2"></p><br>
+
+
+<button class="btn btn-primary" id="a" onclick="location.href='track1.html?host&game=1900&name=host1.0&round=1'">Start Game</button>
+<script>
+
+function st() {
+            timer = setInterval(function() { 
+                mf(); 
+            }, 10000);
+        }
+        
+async function mf() {
+  console.log('kanker')
+  var x = document.getElementById("p1").innerHTML;
+  var q3 = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?sheet="+x;
+  var data = await fetch(q3);
+  var json = await data.json();
+  await dus(json);
+}
+
+function dus(r){
+var z = r.length;
+var y = document.getElementById("p2").innerHTML;
+document.getElementById("p2").innerHTML = '';
+for (let step = 0; step < z; step++) {
+  var y = document.getElementById("p2").innerHTML;
+  var x = r[step];
+  document.getElementById("p2").innerHTML = y+"<br>"+x;
+}
+}
+
+st();
+
+</script>
+
+</body>
+</html>

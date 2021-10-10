@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Track</title>
+    </head>
+    <body>
+    <style>
+    body {
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#charactersList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.character {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'house image';
+    text-align: left;
+}
+
+.character > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.character > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.character > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+    </style>
+        <div class="container">
+            <h1>&#x2728;Spotifight &#x2728;</h1>
+            <div id="searchWrapper">
+                <input
+                    type="text"
+                    name="searchBar"
+                    id="searchBar"
+                    placeholder="search for a track"
+                />
+            </div>
+            <p id="p1">Hello World!</p>
+        </div>
+        <script>
+        let xxx = window.location.href;
+        let poq = "";
+        var game = xxx.split("game=")[1].split('&')[0];
+        var name = xxx.split("name=")[1].split("&")[0];
+        var round = xxx.split("round=")[1].split("/")[0];
+
+
+async function poqc() {
+    console.log('un')
+    if (xxx.includes('join')) {
+        var x = await men();
+        if (x.toString().includes("spot")) {
+            poq = x;
+            console.log(poq);
+        } else {
+            poqc()
+        }
+    } else {
+        poq = 'host';
+    }
+}
+
+async function men() {
+    return fetch("https://script.google.com/macros/s/AKfycbzlbfPzcgR2bsnFJFkgOBp0pb4qzFjSe38htAJiY8PnJ4bii3oC0Q5mfwkE5B8_-OmP/exec?type=track1&sheet="+game)
+        .then(response => response.text())
+        .then(result => result)
+}
+
+
+poqc();
+
+
+            const searchBar = document.getElementById('searchBar');
+        let hpCharacters = [];
+        
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value.toLowerCase();
+        
+            spot(searchString);
+        });
+        
+        async function laad(q){
+          var x = await g6(q);
+          console.log('yeah '+x);
+          document.getElementById("p1").innerHTML = x;
+        }
+        
+        async function g6(q) {
+        
+        var corp = 'https://api.agify.io/?name='+q;
+        console.log(corp);
+        
+        return await fetch( corp)
+          .then(response => response.json())
+          .then(json => json["age"])}
+        
+        async function spot(q){
+          document.getElementById("p1").innerHTML = '';
+          var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer BQDbxBwTatU7_HA48uh7hFifXpdepkLTyOkMN6bElAWhprOUVn4nD6rn3gX6t3PE22CL4BVJi8JA1JIwOgoBfDvaOKBM83v4R9EUmiTbzRF-gdQOSJW8TuLdJ2dJyBu9zJBp9KbOr7c0NN_gHrnwVWab6HC4B4tb2paPv0mDcAjGsl6s6LlvG2d6kz4h57bA");
+        
+        var requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
+        
+        var url = 'https://api.spotify.com/v1/search?q='+q+'&type=track';
+          
+        var res = fetch(url, requestOptions)
+          .then(response => response.json())
+          .then(result => dt(result));
+        }
+        
+        async function dt(js){
+          var data = js["tracks"]["items"];
+          for (var i = 0; i < 10; ++i){
+            var x = document.getElementById("p1").innerHTML;
+            var name = data[i]["name"];
+            var artist = data[i]["album"]["artists"][0]["name"];
+            var noemer = name+' - '+artist;
+            var caller = "'"+data[i]["external_urls"]["spotify"]+"'";
+            var y = '<button onclick="nb('+caller+')">'+noemer+'</button>';
+            document.getElementById("p1").innerHTML = x+'<br>'+y;
+          }
+        }
+        
+        function nb(q){
+            console.log(q);
+            if(xxx.includes('host')){
+                var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+var bet = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
+console.log(bet);
+fetch(bet, requestOptions);
+            } else{
+                bn(q);
+            }
+        }
+
+        function bn(url){
+            var raw = "";
+            console.log('url is ')
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+            var q = '"'+url+'"';
+            if(q===poq){
+                console.log('yeaahh');
+                var g = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
+                console.log(g);
+                fetch(g,requestOptions);
+            } else{
+                console.log(q);
+                console.log(poq);
+            }
+        }
+        
+            </script>
+    </body>
+</html>
