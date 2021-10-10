@@ -118,7 +118,7 @@ async function poqc() {
 }
 
 async function men() {
-    return fetch("https://script.google.com/macros/s/AKfycbzlbfPzcgR2bsnFJFkgOBp0pb4qzFjSe38htAJiY8PnJ4bii3oC0Q5mfwkE5B8_-OmP/exec?type=track1&sheet="+game)
+    return fetch("https://script.google.com/macros/s/AKfycbytrPKz7EIUKkJQXjy1VcQXXQb7aWWvox7teAKmv7LXXtFRxbfAynVNGIjmrnjJajjC/exec?type=track1&sheet="+game+"&round="+round)
         .then(response => response.text())
         .then(result => result)
 }
