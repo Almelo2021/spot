@@ -216,9 +216,11 @@ var requestOptions = {
                 var g = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
                 console.log(g);
                 fetch(g,requestOptions);
+                alert('You Spot-ted It!')
             } else{
                 console.log(q);
                 console.log(poq);
+                alert('Wrong...')
             }
         }
         
