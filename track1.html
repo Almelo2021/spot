@@ -94,12 +94,21 @@ h1 {
             </div>
             <p id="p1">Hello World!</p>
         </div>
+        <div id="myDIV">
+            <button onclick="mf3()">Try it</button>
+            </div>
         <script>
         let xxx = window.location.href;
         let poq = "";
         var game = xxx.split("game=")[1].split('&')[0];
         var name = xxx.split("name=")[1].split("&")[0];
         var round = xxx.split("round=")[1].split("/")[0];
+        var mf3x = document.getElementById("myDIV");
+        if (xxx.includes("host")) {
+            mf3x.style.display = "block";
+        } else {
+            mf3x.style.display = "none";
+        }
 
 
 async function poqc() {
