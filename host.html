@@ -2,9 +2,97 @@
 <html>
 <body>
 
-<h2>Your Game ID is:</h2>
+<style>
+    body {
+    font-family: sans-serif;
+}
 
-<p id="p1">Hello World!</p>
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#charactersList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.character {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'house image';
+    text-align: left;
+}
+
+.character > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.character > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.character > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+
+.myDIV {
+  text-align: center;
+}
+</style>
+
+
+<div class="container">
+            <h1>&#x2728;Spotifight &#x2728;</h1>
+            Game ID: <p id="p1">Hello World!</p>
+            <div id="searchWrapper">
+Username:<br><br> <input type="text" id="myText" value="Mickey"><br><br>
+
+<button onclick="myFunction()">Create Game</button>
+
+<p>Host:</p>
+<p id="demo"></p>
+<br><br>
+<p>Players:</p>
+<p id="p2"></p><br>
+
+
+<button class="btn btn-primary" id="a" onclick="location.href='track1.html?host&game=1900&name=host1.0&round=1'">Start Game</button>
+</div>
 
 <script>
 var x = Math.floor(1000 + Math.random() * 9000);
@@ -41,18 +129,7 @@ var requestOptions = {
 }
 </script>
 
-First Name: <input type="text" id="myText" value="Mickey">
 
-<button onclick="myFunction()">Create Game</button>
-
-<p>Host:</p>
-<p id="demo"></p>
-<br><br>
-<p>Players:</p>
-<p id="p2"></p><br>
-
-
-<button class="btn btn-primary" id="a" onclick="location.href='track1.html?host&game=1900&name=host1.0&round=1'">Start Game</button>
 <script>
 
 function st() {
