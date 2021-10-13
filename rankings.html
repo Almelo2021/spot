@@ -139,12 +139,20 @@ async function mens() {
 }
 
 
+async function menx() {
+    var q = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?sheet="+game+"&type=rups";
+    console.log(q);
+    return fetch(q)
+        .then(response => response.json())
+}
+
 async function mf3() {
   if(xxx.includes('host')){
       var r = 'host';
   } else{
       var r = 'join';
   }
+  await menx();
   alert('Next Round!');
   var z = 'track1.html?'+r+'&game='+game+'&name='+name+'&round='+(Number(round)+1);
   console.log(z);
