@@ -126,6 +126,19 @@ async function poqc() {
     }
 }
 
+async function mf3() {
+  if(xxx.includes('host')){
+      var r = 'host';
+  } else{
+      var r = 'join';
+  }
+  alert('hitlerniqqaballz');
+  var z = 'rankings.html?'+r+'&game='+game+'&name='+name+'&round='+round;
+  await fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?sheet="+game+"&type=rups");
+  console.log(z);
+  location.href=z;
+}
+
 async function men() {
     return fetch("https://script.google.com/macros/s/AKfycbytrPKz7EIUKkJQXjy1VcQXXQb7aWWvox7teAKmv7LXXtFRxbfAynVNGIjmrnjJajjC/exec?type=track1&sheet="+game+"&round="+round)
         .then(response => response.text())
