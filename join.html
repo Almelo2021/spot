@@ -1,7 +1,79 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Join a game!</h2>
+
+<style>
+    body {
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#charactersList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.character {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'house image';
+    text-align: left;
+}
+
+.character > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.character > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.character > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+
+.myDIV {
+  text-align: center;
+}
+</style>
 
 <script>
 async function myFunction(){
@@ -22,12 +94,15 @@ document.getElementById("p1").innerHTML = "Welcome "+y+"! You have joined the lo
 var link = "track1.html?join&game="+x+"&name="+y+"&round=1";
 setTimeout(() => {  window.open(link,"_self"); }, 5000);}
 </script>
-
-Game ID: <input type="text" id="game" value="">
+<div class="container">
+            <h1>&#x2728;Spotifight &#x2728;</h1>
+            <div id="searchWrapper">
+Game ID: <input type="text" id="game" class="searchBar" value="">
 <br><br>
-First Name: <input type="text" id="myText" value="Mickey">
+Username: <input type="text" id="myText" class="searchBar" value="">
 <br><br>
 <button onclick="myFunction()">Join Game!</button>
+</div>
 
 <p id="p1">Hello World!</p>
 
