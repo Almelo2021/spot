@@ -132,7 +132,7 @@ async function mf3() {
   } else{
       var r = 'join';
   }
-  alert('hitlerniqqaballz');
+  alert('Next Round!');
   var z = 'rankings.html?'+r+'&game='+game+'&name='+name+'&round='+round;
   await fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?sheet="+game+"&type=rups");
   console.log(z);
@@ -140,7 +140,7 @@ async function mf3() {
 }
 
 async function men() {
-    return fetch("https://script.google.com/macros/s/AKfycbytrPKz7EIUKkJQXjy1VcQXXQb7aWWvox7teAKmv7LXXtFRxbfAynVNGIjmrnjJajjC/exec?type=track1&sheet="+game+"&round="+round)
+    return fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=track1&sheet="+game+"&round="+round)
         .then(response => response.text())
         .then(result => result)
 }
@@ -176,7 +176,7 @@ poqc();
         async function spot(q){
           document.getElementById("p1").innerHTML = '';
           var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQBD5hV3Hczm0Dltjsm3GP6rAyUWYQ8IrF83Aaq0VdppET7cIHDHbK-12lztgBitnmS1Y7nc2_G92RpErLbN2EtjRZN8AD-Is8w9d4_bUMf3DWdeXN7X1VJX4zZwFQTgM56uOCXYOSIzwpxpxsaF2R9claDOp9C0JoX36WwEF2y2snI-ZfnxfVdvN5QKYhpM");
+        myHeaders.append("Authorization", "Bearer BQAUVGiS6ekjkgmIXMNnRnqYa3HlmAGmQW7NpljhQQ91Q_1NUKK0xwdoE_S7TMIof_eVxFcljzO890eG9QdirwetuxoAZqcegJKJKPobY1ofu80EaI0ED-B-xZCHh_Q4THsZD1JgKW4T58obyvzsyA6vR0uZNXkesjGe1pbhX0-mIMMIuNqzUAGUrDzJbhUQ");
         
         var requestOptions = {
           method: 'GET',
@@ -214,7 +214,7 @@ var requestOptions = {
   body: raw,
   redirect: 'follow'
 };
-var bet = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
+var bet = "https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
 console.log(bet);
 fetch(bet, requestOptions);
 alert('Track Selected!');
@@ -238,7 +238,7 @@ var requestOptions = {
             var q = '"'+url+'"';
             if(q===poq){
                 console.log('yeaahh');
-                var g = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
+                var g = "https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
                 console.log(g);
                 fetch(g,requestOptions);
                 alert('You Spot-ted It!')
