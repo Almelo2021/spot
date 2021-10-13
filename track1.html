@@ -134,13 +134,13 @@ async function mf3() {
   }
   alert('Next Round!');
   var z = 'rankings.html?'+r+'&game='+game+'&name='+name+'&round='+round;
-  await fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?sheet="+game+"&type=rups");
+  await fetch("https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?sheet="+game+"&type=rups");
   console.log(z);
   location.href=z;
 }
 
 async function men() {
-    return fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=track1&sheet="+game+"&round="+round)
+    return fetch("https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?type=track1&sheet="+game+"&round="+round)
         .then(response => response.text())
         .then(result => result)
 }
@@ -214,7 +214,7 @@ var requestOptions = {
   body: raw,
   redirect: 'follow'
 };
-var bet = "https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
+var bet = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
 console.log(bet);
 fetch(bet, requestOptions);
 alert('Track Selected!');
@@ -238,7 +238,7 @@ var requestOptions = {
             var q = '"'+url+'"';
             if(q===poq){
                 console.log('yeaahh');
-                var g = "https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
+                var g = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?type=score&game="+game+"&name="+name+"&round="+round+"&url=x";
                 console.log(g);
                 fetch(g,requestOptions);
                 alert('You Spot-ted It!')
@@ -248,6 +248,30 @@ var requestOptions = {
                 alert('Wrong...')
             }
         }
+
+        async function btjr() {
+    if (xxx.includes('join')) {
+        var x = await mens();
+        if (x.toString().includes("rank")) {
+            var z = 'rankings.html?join&game='+game+'&name='+name+'&round='+round;
+            console.log(z);
+            location.href=z;
+        } else {
+            btjr()
+        }
+    } else {
+        poq = 'host';
+    }
+}
+
+async function mens() {
+    var q = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?sheet="+game+"&type=update";
+    console.log(q);
+    return fetch(q)
+        .then(response => response.json())
+}
+
+btjr();
         
             </script>
     </body>
