@@ -81,6 +81,10 @@ h1 {
     right: 15px;
 }
 
+.myDIV {
+  text-align: center;
+}
+
     </style>
         <div class="container">
             <h1>&#x2728;Spotifight &#x2728;</h1>
@@ -94,8 +98,8 @@ h1 {
             </div>
             <p id="p1">Hello World!</p>
         </div>
-        <div id="myDIV">
-            <button onclick="mf3()">Try it</button>
+        <div class="myDIV" id="myDIV">
+            <button onclick="mf3()">Next Round!</button>
             </div>
         <script>
         let xxx = window.location.href;
@@ -104,11 +108,7 @@ h1 {
         var name = xxx.split("name=")[1].split("&")[0];
         var round = xxx.split("round=")[1].split("/")[0];
         var mf3x = document.getElementById("myDIV");
-        if (xxx.includes("host")) {
-            mf3x.style.display = "block";
-        } else {
-            mf3x.style.display = "none";
-        }
+        mf3x.style.display = "none";
 
 
 async function poqc() {
@@ -204,7 +204,10 @@ var requestOptions = {
 var bet = "https://script.google.com/macros/s/AKfycbx_J3ePR_NGetqVHvL5Xk7Ozdm0cZlBWGtfA11bj3CnBmA5wTuxz-A8Kg2SUdsfsy0I/exec?type=track1&url="+q+"&game="+game+"&name="+name+"&round="+round;
 console.log(bet);
 fetch(bet, requestOptions);
-alert('Track Selected!')
+alert('Track Selected!');
+document.getElementById("p1").innerHTML = "";
+var mf3x = document.getElementById("myDIV");
+mf3x.style.display = "block";
             } else{
                 bn(q);
             }
