@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Track</title>
+    </head>
+    <body>
+    <style>
+    body {
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#charactersList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.character {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'house image';
+    text-align: left;
+}
+
+.character > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.character > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.character > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+.myDIV {
+  text-align: center;
+}
+
+    </style>
+        <div class="container">
+            <h1>&#x2728;Spotifight &#x2728;</h1>
+            <p id="p1">Rankings:</p>
+            <p id="p2"></p>
+        </div>
+        <div class="myDIV" id="myDIV">
+            <button onclick="mf3()">Next Round!</button>
+            </div>
+        <script>
+        let xxx = window.location.href;
+        let poq = "";
+        var game = xxx.split("game=")[1].split('&')[0];
+        var name = xxx.split("name=")[1].split("&")[0];
+        var round = xxx.split("round=")[1].split("/")[0];
+        var mf3x = document.getElementById("myDIV");
+        mf3x.style.display = "none";
+
+
+async function poqc() {
+    console.log('un')
+    const x = await men();
+    var l = x.length;
+    console.log(l);
+    var w = "";
+    for(let i=0;i<l;i++){
+        var y = x[i];
+        var z = "<p>"+(Number(i)+1)+": "+x[i].toString().split(',')[0]+" - "+x[i].toString().split(',')[1]+"</p>";
+        w = w+z;
+    }
+    await console.log(x);
+    document.getElementById("p2").innerHTML = await w;
+    if(xxx.includes("host")){
+        mf3x.style.display = "block";
+    }
+}
+
+async function men() {
+    var q = "https://script.google.com/macros/s/AKfycbwx3icylSwmeEQml6srsPFMJyzy3k46JsO56VPzwyI1V7clxH6Ldy-B8YLXQedl1-ek/exec?sheet="+game+"&type=result";
+    console.log(q);
+    return fetch(q)
+        .then(response => response.json())
+}
+
+
+async function mens() {
+    var q = "https://script.google.com/macros/s/AKfycbwx3icylSwmeEQml6srsPFMJyzy3k46JsO56VPzwyI1V7clxH6Ldy-B8YLXQedl1-ek/exec?sheet="+game+"&type=update";
+    console.log(q);
+    return fetch(q)
+        .then(response => response.json())
+}
+
+
+async function mf3() {
+  if(xxx.includes('host')){
+      var r = 'host';
+  } else{
+      var r = 'join';
+  }
+  alert('hitlerniqqaballz');
+  var z = 'track1.html?'+r+'&game='+game+'&name='+name+'&round='+(Number(round)+1);
+  console.log(z);
+  location.href=z;
+}
+
+async function btjr() {
+    if (xxx.includes('join')) {
+        var x = await men();
+        if (x.toString().includes("game")) {
+            var z = 'track1.html?join&game='+game+'&name='+name+'&round='+(Number(round)+1);
+            console.log(z);
+            location.href=z;
+        } else {
+            poqc()
+        }
+    } else {
+        poq = 'host';
+    }
+}
+
+poqc();
+
+
+btjr();
+        
+            </script>
+    </body>
+</html>
