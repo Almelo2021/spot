@@ -98,6 +98,7 @@ h1 {
         let xxx = window.location.href;
         let poq = "";
         var game = xxx.split("game=")[1].split('&')[0];
+        console.log("game is "+game)
         var name = xxx.split("name=")[1].split("&")[0];
         var round = xxx.split("round=")[1].split("/")[0];
         var mf3x = document.getElementById("myDIV");
@@ -123,7 +124,7 @@ async function poqc() {
 }
 
 async function men() {
-    var q = "https://script.google.com/macros/s/AKfycbwu6eJk5mUVP2gDos3vgsXhru8w70Xx-Du4k31ghmzaJz85eAjGDiWEeAZY9O2o0RxB/exec?sheet="+game+"&type=result";
+    var q = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?sheet="+game+"&type=result";
     console.log(q);
     return fetch(q)
         .then(response => response.json())
@@ -131,7 +132,7 @@ async function men() {
 
 
 async function mens() {
-    var q = "https://script.google.com/macros/s/AKfycbwu6eJk5mUVP2gDos3vgsXhru8w70Xx-Du4k31ghmzaJz85eAjGDiWEeAZY9O2o0RxB/exec?sheet="+game+"&type=update";
+    var q = "https://script.google.com/macros/s/AKfycbxBjZTKRRH7qjNahZ5F5tqNHgPu8JbG8f4LMct-LAE0r4KzJ-ucSq6uS2quP46OQ9f2/exec?sheet="+game+"&type=update";
     console.log(q);
     return fetch(q)
         .then(response => response.json())
@@ -144,7 +145,7 @@ async function mf3() {
   } else{
       var r = 'join';
   }
-  alert('hitlerniqqaballz');
+  alert('Next Round!');
   var z = 'track1.html?'+r+'&game='+game+'&name='+name+'&round='+(Number(round)+1);
   console.log(z);
   location.href=z;
@@ -152,13 +153,13 @@ async function mf3() {
 
 async function btjr() {
     if (xxx.includes('join')) {
-        var x = await men();
+        var x = await mens();
         if (x.toString().includes("game")) {
             var z = 'track1.html?join&game='+game+'&name='+name+'&round='+(Number(round)+1);
             console.log(z);
             location.href=z;
         } else {
-            poqc()
+            btjr()
         }
     } else {
         poq = 'host';
