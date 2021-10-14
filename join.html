@@ -92,7 +92,7 @@ var x = document.getElementById("game").value;
 var y = document.getElementById("myText").value;
 var q = "https://script.google.com/macros/s/AKfycbyKBe7NlwoMYH8mMKrx1PL703NeE0ZOHPV7Du5JZBuqsd5TPtX0XI8CIfAB0Bapd7Oq/exec?type=player&name="+y+"&game="+x;
 fetch(q, requestOptions);
-var code = await men(x).replaceAll('"','');
+var code = await men(x).replace('"','').replace('"','');
 console.log(men);
 document.getElementById("p1").innerHTML = "Welcome "+y+"! You have joined the lobby and will proceed when the host starts the game.";
 var link = "track1.html?join&game="+x+"&name="+y+"&code="+code+"&round=1";
