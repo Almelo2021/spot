@@ -95,6 +95,8 @@ Username:<br><br> <input type="text" id="myText" value="Mickey"><br><br>
 </div>
 
 <script>
+  var xxx = window.location.href;
+  var code = xxx.split("token=")[1].split("&")[0];
 var x = Math.floor(1000 + Math.random() * 9000);
 document.getElementById("p1").innerHTML = x;
 var raw = "";
@@ -104,7 +106,7 @@ var requestOptions = {
   body: raw,
   redirect: 'follow'
 };
-var q = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?type=game&name="+x+"&game="+x;
+var q = "https://script.google.com/macros/s/AKfycbwtMUPeNQ-EboJUHvGtL6v7VEMsXeDwKyJ7N9EiYRByklOY0MNLJZg-O8gwAJJdLutO/exec?type=game&name="+x+"&game="+x+"&code="+code;
 fetch(q, requestOptions);
 </script>
 
@@ -126,7 +128,7 @@ var requestOptions = {
   var link = "location.href='track1.html?host&game="+x+"&name="+y+"&code="+code+"&round=1'";
   console.log(link);
   document.getElementById( "a" ).setAttribute( "onClick", link );
-  var q2 = "https://script.google.com/macros/s/AKfycbyX7aHy4-hnnC2c5IVU0H4agdp2N6lTx2226clakDrFRPwgmt25IE3JA7ARL1d_Dx07/exec?type=host&name="+y+"&game="+x+"&code="+code;
+  var q2 = "https://script.google.com/macros/s/AKfycbwtMUPeNQ-EboJUHvGtL6v7VEMsXeDwKyJ7N9EiYRByklOY0MNLJZg-O8gwAJJdLutO/exec?type=host&name="+y+"&game="+x+"&code="+code;
   fetch(q2, requestOptions);
 }
 </script>
@@ -143,7 +145,7 @@ function st() {
 async function mf() {
   console.log('kanker')
   var x = document.getElementById("p1").innerHTML;
-  var q3 = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?sheet="+x;
+  var q3 = "https://script.google.com/macros/s/AKfycbwtMUPeNQ-EboJUHvGtL6v7VEMsXeDwKyJ7N9EiYRByklOY0MNLJZg-O8gwAJJdLutO/exec?sheet="+x;
   var data = await fetch(q3);
   var json = await data.json();
   await dus(json);
