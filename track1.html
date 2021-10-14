@@ -246,8 +246,10 @@ var requestOptions = {
   body: raw,
   redirect: 'follow'
 };
+console.log(requestOptions);
+var did = await menq();
 
-fetch("https://api.spotify.com/v1/me/player/play", requestOptions)
+fetch("https://api.spotify.com/v1/me/player/play?device_id="+did, requestOptions)
         }
         
         function nb(q){
@@ -316,6 +318,22 @@ async function mens() {
     console.log(q);
     return fetch(q)
         .then(response => response.json())
+}
+
+async function menq() {
+    var myHeaders = new Headers();
+    var brr = "Bearer "+code;
+    myHeaders.append("Authorization", brr);
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+    var q = "https://api.spotify.com/v1/me/player/devices";
+    console.log(q);
+    return fetch(q, requestOptions)
+        .then(response => response.json())
+        .then(result => result["devices"][0]["id"])
 }
 
 btjr();
