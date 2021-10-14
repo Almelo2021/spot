@@ -177,7 +177,9 @@ poqc();
         async function spot(q){
           document.getElementById("p1").innerHTML = '';
           var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer "+code);
+          var br = "Bearer "+code;
+          console.log(br);
+        myHeaders.append("Authorization", br);
         
         var requestOptions = {
           method: 'GET',
