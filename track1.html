@@ -206,6 +206,49 @@ poqc();
             document.getElementById("p1").innerHTML = x+'<br>'+y;
           }
         }
+
+        async function mes(q){
+   var myHeaders = new Headers();
+          var brr = "Bearer "+code;
+        myHeaders.append("Authorization", brr);
+  var raw = "";
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+  var bb = q.split("track/")[1];
+  var br = "https://api.spotify.com/v1/tracks/"+bb;
+  var x = await fetch(br, requestOptions)
+          .then(response => response.json())
+          .then(result => dts(result));
+}
+
+async function dts(js){
+          console.log('aha')
+          var d1 = js["album"]["uri"];
+          var d2 = js["track_number"];
+          var d3 = (Number(d2)-1);
+          console.log(d1+" "+d3)
+  var raw = JSON.stringify({
+  "context_uri": d1,
+  "offset": {
+    "position": d3
+  }
+});
+var myHeaders = new Headers();
+          var brr = "Bearer "+code;
+        myHeaders.append("Authorization", brr);
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://api.spotify.com/v1/me/player/play", requestOptions)
+        }
         
         function nb(q){
             console.log(q);
@@ -222,6 +265,7 @@ console.log(bet);
 fetch(bet, requestOptions);
 alert('Track Selected!');
 document.getElementById("p1").innerHTML = "";
+mes(q);
 var mf3x = document.getElementById("myDIV");
 mf3x.style.display = "block";
             } else{
