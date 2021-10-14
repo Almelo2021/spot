@@ -134,7 +134,7 @@ async function mf3() {
       var r = 'join';
   }
   alert('Next Round!');
-  var z = 'rankings.html?'+r+'&game='+game+'&name='+name+'&round='+round;
+  var z = 'rankings.html?'+r+'&game='+game+'&name='+name+'&code='+code+'&round='+round;
   await fetch("https://script.google.com/macros/s/AKfycbzye9gDlMOBjfnSwk3x3YcMQIXul3urj2juS1PCJPYjaW2PZ1M92QieKK6OTsq_f34E/exec?sheet="+game+"&type=rups");
   console.log(z);
   location.href=z;
@@ -256,7 +256,7 @@ var requestOptions = {
     if (xxx.includes('join')) {
         var x = await mens();
         if (x.toString().includes("rank")) {
-            var z = 'rankings.html?join&game='+game+'&name='+name+'&round='+round;
+            var z = 'rankings.html?join&game='+game+'&name='+name+'&code='+code+'&round='+round;
             console.log(z);
             location.href=z;
         } else {
