@@ -99,7 +99,7 @@ var link = "track1.html?join&game="+x+"&name="+y+"&code="+code+"&round=1";
 setTimeout(() => {  window.open(link,"_self"); }, 5000);}
 
 async function men() {
-    return fetch("https://script.google.com/macros/s/AKfycbwlj8SmdYQyS2QP1JsN_aHoNy4K2ZvD4yEBAt5q8GK3xiKe1z5QkiT0SG2tt9LeZtcJ/exec?type=code&sheet="+game)
+    return fetch("https://script.google.com/macros/s/AKfycbwlj8SmdYQyS2QP1JsN_aHoNy4K2ZvD4yEBAt5q8GK3xiKe1z5QkiT0SG2tt9LeZtcJ/exec?type=code&sheet="+x)
         .then(response => response.text())
         .then(result => result)
 }
