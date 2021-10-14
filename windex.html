@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The onclick Event</h1>
+
+<p>The onclick event is used to trigger a function when an element is clicked on.</p>
+
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = "https://accounts.spotify.com/authorize?client_id=66242c9b5a274e6ca904de7aeac78f22&response_type=code&redirect_uri=https://almelo2021.github.io/spot/&scope=user-read-private%20user-read-email&state=34fFs29kd09"
+  fetch(x)
+}
+</script>
+
+</body>
+</html>
