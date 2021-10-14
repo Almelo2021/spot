@@ -2,59 +2,17 @@
 <html>
 <body>
 
-<style>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
-body {background-color: black;}
-
-.my-button {
-    display: inline-block;
-    margin: 5px; /* space between buttons */
-    background: #1ED760; /* background color */
-    color: #333; /* text color */
-    font-size: 1.5em;
-    font-family: ‘Georgia’, serif;
-    font-style: italic;
-    border-radius: 50px; /* rounded corners */
-    padding: 8px 16px; /* space around text */
-    -moz-transition: all 0.2s;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-}
-.my-button:hover {
-    background: #666;
-    color: #c1e1e0;
-}
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-h1 {
-    color: #1ED760;
-    text-align: center;
-}
-
-    </style>
-    
-    <h1>&#x2728;Spotifight &#x2728;</h1>
-
-<div class="container">
-  <div class="button-wrapper">
-    <button class="my-button" style="width:160px;height:130px;" onclick="location.href='host.html'">Host</button>
-    <button class="my-button" style="width:160px;height:130px;" onclick="location.href='join.html'">Join</button>
-  </div>
-</div>
-
+<button class="btn btn-primary" onclick="my1()">Host</button>
+<button class="btn btn-primary" onclick="location.href='join.html'">Join</button>
 
 <p id="demo"></p>
 
 <script>
 function my1() {
-  document.getElementById("demo").innerHTML = "Hello World";
+  location.href = "https://accounts.spotify.com/authorize?client_id=66242c9b5a274e6ca904de7aeac78f22&response_type=code&redirect_uri=https://almelo2021.github.io/spot/host&scope=user-read-private%20user-read-email&state=34fFs29kd09";
 }
 function my2() {
   document.getElementById("demo").innerHTML = "Goodbye World";
