@@ -119,7 +119,7 @@ var requestOptions = {
   redirect: 'follow'
 };
   var xxx = window.location.href;
-  var code = xxx.split("code=")[1];
+  var code = xxx.split("token=")[1].split("&")[0];
   var y = document.getElementById("myText").value;
   var x = document.getElementById("p1").innerHTML;
   document.getElementById("demo").innerHTML = y;
