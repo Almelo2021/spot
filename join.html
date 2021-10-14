@@ -91,8 +91,8 @@ var requestOptions = {
 var x = document.getElementById("game").value;
 var y = document.getElementById("myText").value;
 var q = "https://script.google.com/macros/s/AKfycbyKBe7NlwoMYH8mMKrx1PL703NeE0ZOHPV7Du5JZBuqsd5TPtX0XI8CIfAB0Bapd7Oq/exec?type=player&name="+y+"&game="+x;
-console.log("q is "+q);
-fetch(q, requestOptions);
+var z = await fetch(q, requestOptions);
+await console.log(z);
 document.getElementById("p1").innerHTML = "Welcome "+y+"! You have joined the lobby and will proceed when the host starts the game.";
 var link = "track1.html?join&game="+x+"&name="+y+"&round=1";
 setTimeout(() => {  window.open(link,"_self"); }, 5000);}
