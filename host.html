@@ -119,11 +119,11 @@ var requestOptions = {
   redirect: 'follow'
 };
   var xxx = window.location.href;
-  var z = xxx.split("code=")[1];
+  var code = xxx.split("code=")[1];
   var y = document.getElementById("myText").value;
   var x = document.getElementById("p1").innerHTML;
   document.getElementById("demo").innerHTML = y;
-  var link = "location.href='track1.html?host&game="+x+"&name="+y+"&round=1&code="+z;
+  var link = "location.href='track1.html?host&game="+x+"&name="+y+"&code="+code+"&round=1'";
   console.log(link);
   document.getElementById( "a" ).setAttribute( "onClick", link );
   var q2 = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?type=host&name="+y+"&game="+x;
