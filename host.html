@@ -120,14 +120,13 @@ var requestOptions = {
 };
   var xxx = window.location.href;
   var code = xxx.split("token=")[1].split("&")[0];
-  console.log(code);
   var y = document.getElementById("myText").value;
   var x = document.getElementById("p1").innerHTML;
   document.getElementById("demo").innerHTML = y;
   var link = "location.href='track1.html?host&game="+x+"&name="+y+"&code="+code+"&round=1'";
   console.log(link);
   document.getElementById( "a" ).setAttribute( "onClick", link );
-  var q2 = "https://script.google.com/macros/s/AKfycbwJjD8tNj-0xMOBwISegItpS_wzuGYHSDWTl4DYjwqUd-2wC5ItWR6EB8dTWlfsJJQ/exec?type=host&name="+y+"&game="+x;
+  var q2 = "https://script.google.com/macros/s/AKfycbyX7aHy4-hnnC2c5IVU0H4agdp2N6lTx2226clakDrFRPwgmt25IE3JA7ARL1d_Dx07/exec?type=host&name="+y+"&game="+x+"&code="+code;
   fetch(q2, requestOptions);
 }
 </script>
