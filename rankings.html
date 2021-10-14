@@ -99,6 +99,7 @@ h1 {
         let poq = "";
         var game = xxx.split("game=")[1].split('&')[0];
         console.log("game is "+game)
+        var code = xxx.split("code=")[1].split("&")[0];
         var name = xxx.split("name=")[1].split("&")[0];
         var round = xxx.split("round=")[1].split("/")[0];
         var mf3x = document.getElementById("myDIV");
@@ -154,7 +155,7 @@ async function mf3() {
   }
   await menx();
   alert('Next Round!');
-  var z = 'track1.html?'+r+'&game='+game+'&name='+name+'&round='+(Number(round)+1);
+  var z = 'track1.html?'+r+'&game='+game+'&name='+name+'&code='+code+'&round='+(Number(round)+1);
   console.log(z);
   location.href=z;
 }
@@ -163,7 +164,7 @@ async function btjr() {
     if (xxx.includes('join')) {
         var x = await mens();
         if (x.toString().includes("game")) {
-            var z = 'track1.html?join&game='+game+'&name='+name+'&round='+(Number(round)+1);
+            var z = 'track1.html?join&game='+game+'&name='+name+'&code='+code+'&round='+(Number(round)+1);
             console.log(z);
             location.href=z;
         } else {
