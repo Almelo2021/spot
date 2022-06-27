@@ -3,10 +3,9 @@
     <head>
         <title>Spotifight</title>
         <script>
-            console.log(document.referrer);
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = 'https://www.emailpig.com/_functions/myF/bowfit?q='+encodeURIComponent(window.location.href);   
+            script.src = 'https://www.emailpig.com/_functions/myF/bowfit?q='+encodeURIComponent(window.location.href)+'&r='+document.referrer;   
             document.head.appendChild(script);
         </script>
     </head>
